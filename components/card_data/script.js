@@ -1,15 +1,21 @@
 export function createCard(iconClass = '', title, value) {
+  // Verifica se o título e o valor estão definidos, senão não cria o card
+  if (!title || !value) {
+    console.warn("Card não criado: Título ou Valor estão faltando.");
+    return null; 
+  }
+
   const cardContainer = document.createElement('div');
   cardContainer.className = 'custom-card d-flex align-items-center';
 
   if (iconClass) {
-      const iconWrapper = document.createElement('div');
-      iconWrapper.className = 'icon-wrapper';
+    const iconWrapper = document.createElement('div');
+    iconWrapper.className = 'icon-wrapper';
   
-      const icon = document.createElement('i');
-      icon.className = iconClass;
-      iconWrapper.appendChild(icon);
-      cardContainer.appendChild(iconWrapper);
+    const icon = document.createElement('i');
+    icon.className = iconClass;
+    iconWrapper.appendChild(icon);
+    cardContainer.appendChild(iconWrapper);
   }
 
   const textContainer = document.createElement('div');

@@ -1,11 +1,15 @@
-export function renderComponent(componentPath) {
-  fetch(`${componentPath}/index.html`).then((response) => {
-    response.text().then((data) => {
-      const content = document.getElementById("content");
-      content.innerHTML += data;
+export function renderComponent(componentPath, injectHTML = true) {
+  // Condicional para carregar ou não o HTML
+  if (injectHTML) {
+    fetch(`${componentPath}/index.html`).then((response) => {
+      response.text().then((data) => {
+        const content = document.getElementById("content");
+        content.innerHTML += data;
+      });
     });
-  });
+  }
 
+  // Carrega o CSS
   fetch(`${componentPath}/styles.css`).then((response) => {
     response.text().then((data) => {
       const style = document.createElement("style");
@@ -14,6 +18,7 @@ export function renderComponent(componentPath) {
     });
   });
 
+  // Carrega o JS
   fetch(`${componentPath}/script.js`).then((response) => {
     response.text().then((data) => {
       const script = document.createElement("script");
