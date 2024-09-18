@@ -1,0 +1,36 @@
+header {
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+input::placeholder {
+    color: #EC364330;
+}
+
+i.bi {
+    font-size: 1rem;
+    color: #ff0000; 
+}
+
+input:focus {
+    color: red;
+    box-shadow: none;
+}
+
+.input-group .form-control {
+    background-color:#EC364330; 
+    border: none; 
+    color: red; 
+}
+
+.input-group .form-control::placeholder {
+    color: red; 
+}
+
+.input-group .input-group-text {
+    background-color: #EC364330;
+    border: none; 
+    color: #fff; 
+}
