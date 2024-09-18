@@ -1,14 +1,7 @@
-const header = fetch("./components/header");
-const sidebar = fetch("./components/sidebar");
-const dashboard = fetch("/screens/dashboard");
+import { renderComponent } from "./utils/render-component.js";
 
-Promise.all([header, sidebar, dashboard]).then((responses) => {
-  responses.forEach((response) => {
-    response
-      .text()
-      .then((data) => {
-        document.getElementById("content").innerHTML += data;
-      })
-      .catch((error) => console.log(`Error loading component:`, error));
-  });
-});
+const header = renderComponent("./components/header");
+const sidebar = renderComponent("./components/sidebar");
+const dashboard = renderComponent("./screens/dashboard");
+
+Promise.all([header, sidebar, dashboard]);
