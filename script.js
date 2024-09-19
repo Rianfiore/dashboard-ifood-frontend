@@ -1,7 +1,7 @@
 import { renderComponent } from "./utils/render-component.js";
 import { createCard } from "./components/card_data/script.js";
 
-//const header = renderComponent("./components/header");
+const header = renderComponent("./components/header");
 //const sidebar = renderComponent("./components/sidebar");
 //const dashboard = renderComponent("./screens/dashboard");
 const cardData = renderComponent("./components/card_data", false); // Utilazando o false para não incluir um componente vazio (padrão).
