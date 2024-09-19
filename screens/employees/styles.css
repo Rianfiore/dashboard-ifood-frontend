@@ -1,0 +1,28 @@
+#employees {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 40px;
+}
+.custom-card {
+  width: 100%;
+  max-width: 360px;
+  max-height: 414px;
+  margin: 10px;
+  vertical-align: top;
+
+  overflow: hidden;
+}
+
+.img {
+  background-color: #dc6262;
+  width: 100%;
+  height: 100vh;
+  max-height: 256px;
+  margin: 0;
+}
+
+#card-content {
+  padding: 16px;
+}
