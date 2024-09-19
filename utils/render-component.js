@@ -1,6 +1,13 @@
-export function renderComponent(componentPath, injectHTML = true) {
-  // Condicional para carregar ou não o HTML
-  if (injectHTML) {
+
+function renderComponent(componentPath, renderConfigParam) {
+  const renderConfig = {
+    hasHTML: true,
+    hasCSS: true,
+    hasJS: false,
+    ...renderConfigParam,
+  };
+  // Carrega o HTML
+  if (renderConfig.hasHTML) {
     fetch(`${componentPath}/index.html`).then((response) => {
       response.text().then((data) => {
         const content = document.getElementById("content");
@@ -10,20 +17,27 @@ export function renderComponent(componentPath, injectHTML = true) {
   }
 
   // Carrega o CSS
-  fetch(`${componentPath}/styles.css`).then((response) => {
-    response.text().then((data) => {
-      const style = document.createElement("style");
-      style.textContent = data;
-      document.head.appendChild(style);
+  if (renderConfig.hasCSS) {
+    fetch(`${componentPath}/styles.css`).then((response) => {
+      response.text().then((data) => {
+        const style = document.createElement("style");
+        style.textContent = data;
+        document.head.appendChild(style);
+      });
     });
-  });
+  }
 
   // Carrega o JS
-  fetch(`${componentPath}/script.js`).then((response) => {
-    response.text().then((data) => {
-      const script = document.createElement("script");
-      script.textContent = data;
-      document.body.appendChild(script);
+
+  if (renderConfig.hasJS) {
+    fetch(`${componentPath}/script.js`).then((response) => {
+      response.text().then((data) => {
+        const script = document.createElement("script");
+
+        script.setAttribute("src", `${componentPath}/script.js`);
+
+        document.body.insertBefore(script, document.body.firstChild);
+      });
     });
-  });
+  }
 }
