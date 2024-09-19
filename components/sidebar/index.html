@@ -1,51 +1,105 @@
-<aside class="mb-">
-  <nav>
+<aside id="aside" class="position-fixed top-0 h-100 rounded-end-5 px-4 py-3">
+  <nav id="asidebar__nav">
+    <span
+      id="asidebar__expand-button"
+      class="compacted"
+      onclick="handleExpandSidebarClick(event)"
+    >
+      <p>></p>
+    </span>
     <img />
 
-    <hr />
+    <hr class="divider" />
 
-    <li>Dashboard</li>
+    <li
+      id="asidebar__item-title"
+      class="text-white selected"
+      onclick="handleSidebarItemClick(event, 'dashboard')"
+    >
+      <i class="bi bi-house-fill d-flex"></i>
+      Dashboard
+    </li>
 
-    <div id="analysis">
-      <h4>ANÁLISE</h4>
+    <div id="asidebar__category-container">
+      <h4 id="asidebar__category" class="text-white">ANÁLISE</h4>
 
-      <li>Performance</li>
-      <li>Hotjar - Marketing</li>
-      <li>Transações</li>
+      <div>
+        <li id="asidebar__item-title" class="text-white">
+          <i class="bi bi-bar-chart-fill d-flex"></i>
+          Performance
+        </li>
+        <li id="asidebar__item-title" class="text-white">
+          <i class="bi bi-hand-index-thumb-fill d-flex"></i>
+          Hotjar - Marketing
+        </li>
+        <li id="asidebar__item-title" class="text-white">
+          <i class="bi bi-wallet-fill d-flex"></i>
+          Transações
+        </li>
+      </div>
     </div>
 
-    <hr />
+    <hr class="divider" />
 
-    <div id="support">
-      <h4>SUPORTE</h4>
+    <div id="asidebar__category-container">
+      <h4 id="asidebar__category" class="text-white">SUPORTE</h4>
 
-      <li>Tickets</li>
-      <li>Funcionários</li>
-      <li>Clientes</li>
-      <li>Motoboy</li>
+      <div>
+        <li id="asidebar__item-title" class="text-white">
+          <i class="bi bi-ticket-perforated-fill d-flex"></i>
+          Tickets
+        </li>
+        <li
+          id="asidebar__item-title"
+          class="text-white"
+          onclick="handleSidebarItemClick(event,'employees')"
+        >
+          <i class="bi bi-person-fill d-flex"></i>
+          Funcionários
+        </li>
+        <li id="asidebar__item-title" class="text-white">
+          <i class="bi bi-people-fill d-flex"></i>
+          Clientes
+        </li>
+        <li id="asidebar__item-title" class="text-white">
+          <i class="bi bi-speedometer d-flex"></i>
+          Motoboy
+        </li>
+      </div>
     </div>
 
-    <hr />
+    <hr class="divider" />
 
-    <div id="general-orders">
-      <h4>PEDIDOS GERAIS</h4>
+    <div id="asidebar__category-container">
+      <h4 id="asidebar__category" class="text-white">PEDIDOS GERAIS</h4>
 
-      <li>Produtos</li>
-      <li>Pedidos</li>
-      <li>Relatórios</li>
+      <div>
+        <li id="asidebar__item-title" class="text-white">
+          <i class="bi bi-boxes d-flex"></i>
+          Produtos
+        </li>
+        <li id="asidebar__item-title" class="text-white">
+          <i class="bi bi-cart-fill d-flex"></i>
+          Pedidos
+        </li>
+        <li id="asidebar__item-title" class="text-white">
+          <i class="bi bi-file-earmark-fill d-flex"></i>
+          Relatórios
+        </li>
+      </div>
     </div>
 
-    <hr />
+    <hr class="divider" />
 
-    <div id="admin">
-      <li>Gerenciar</li>
-      <li>Pedidos</li>
-      <li>Relatórios</li>
+    <div id="asidebar__category-container">
+      <h4 id="asidebar__category" class="text-white">ADMIN</h4>
+
+      <li id="asidebar__item-title" class="text-white">Gerenciar</li>
     </div>
   </nav>
 
   <nav>
-    <li>Configurações</li>
-    <li>Sair</li>
+    <li id="asidebar__item-title" class="text-white">Configurações</li>
+    <li id="asidebar__item-title" class="text-white">Sair</li>
   </nav>
 </aside>
